@@ -51,6 +51,8 @@
 {{- partial "home_info.html" . }}
 {{- end }}
 
+{{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+
 {{- $term := .Data.Term }}
 {{- range $index, $page := $paginator.Pages }}
 
