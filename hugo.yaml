@@ -1,0 +1,18 @@
+baseURL: https://shengzhe.ai/
+languageCode: en-us
+title: Shengzhe
+theme: ["PaperMod"]
+
+params:
+  socialIcons: # optional
+    - name: "linkedin"
+      url: "http://linkedin.com/in/yaoshengzhe"
+    - name: "github"
+      url: "https://github.com/yaoshengzhe"
+
+menu:
+  main:
+    - identifier: linkedin
+      name: linkedin
+      url: https://linkedin.com/in/yaoshengzhe/
+      weight: 30
