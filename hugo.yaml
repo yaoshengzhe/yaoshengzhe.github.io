@@ -10,9 +10,3 @@ params:
     - name: "github"
       url: "https://github.com/yaoshengzhe"
 
-menu:
-  main:
-    - identifier: linkedin
-      name: linkedin
-      url: https://linkedin.com/in/yaoshengzhe/
-      weight: 30
