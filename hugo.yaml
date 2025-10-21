@@ -4,6 +4,7 @@ title: Shengzhe
 theme: ["PaperMod"]
 
 params:
+  comments: true
   socialIcons: # optional
     - name: "linkedin"
       url: "http://linkedin.com/in/yaoshengzhe"
