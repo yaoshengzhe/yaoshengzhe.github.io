@@ -28,14 +28,18 @@ params:
     buttons:
       - name: Blog
         url: /posts/
-      - name: About
-        url: /about/
+      - name: GitHub
+        url: https://github.com/yaoshengzhe
+      - name: X
+        url: https://x.com/shengzheyao
 
   socialIcons:
     - name: github
       url: "https://github.com/yaoshengzhe"
     - name: linkedin
       url: "https://linkedin.com/in/yaoshengzhe"
+    - name: x
+      url: "https://x.com/shengzheyao"
     - name: rss
       url: "/index.xml"
 
@@ -47,3 +51,6 @@ menu:
     - name: Tags
       url: /tags/
       weight: 20
+    - name: Subscribe
+      url: /index.xml
+      weight: 30
