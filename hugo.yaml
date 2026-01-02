@@ -3,7 +3,25 @@ languageCode: en-us
 title: Shengzhe
 theme: ["PaperMod"]
 
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \(
+              - \)
+            - - $
+              - $
+        enable: true
+
 params:
+  math: true
   author: Shengzhe
   description: "Software engineer building next-gen AI platforms. Writing about LLMs, distributed systems, and the craft of engineering."
   comments: true
