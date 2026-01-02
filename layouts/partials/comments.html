@@ -1,19 +1,53 @@
 {{- /* Comments area start */ -}}
+<style>
+  /* Hide all giscus reactions except thumbs up */
+  .gsc-reactions-popover .gsc-emoji-button:nth-child(n+2),
+  .gsc-direct-reaction-button:not(:first-child),
+  .gsc-reactions-button .gsc-emoji-button:nth-child(n+2) {
+    display: none !important;
+  }
+</style>
 <div id="giscus-comments" style="margin-top: 2rem;">
-  <script src="https://giscus.app/client.js"
-          data-repo="yaoshengzhe/yaoshengzhe.github.io"
-          data-repo-id="MDEwOlJlcG9zaXRvcnkxNzI0MDQ0NTA="
-          data-category="General"
-          data-category-id="DIC_kwDOCkau4s4Cw4Zs"
-          data-mapping="pathname"
-          data-strict="0"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="bottom"
-          data-theme="https://shengzhe.ai/css/giscus-custom.css"
-          data-lang="en"
-          crossorigin="anonymous"
-          async>
+  <script>
+    // Use giscus built-in themes for reliability
+    function getGiscusTheme() {
+      return document.body.classList.contains('dark') ? 'dark' : 'light';
+    }
+
+    // Load giscus with correct initial theme
+    const giscusScript = document.createElement('script');
+    giscusScript.src = 'https://giscus.app/client.js';
+    giscusScript.setAttribute('data-repo', 'yaoshengzhe/yaoshengzhe.github.io');
+    giscusScript.setAttribute('data-repo-id', 'MDEwOlJlcG9zaXRvcnkxNzI0MDQ0NTA=');
+    giscusScript.setAttribute('data-category', 'General');
+    giscusScript.setAttribute('data-category-id', 'DIC_kwDOCkau4s4Cw4Zs');
+    giscusScript.setAttribute('data-mapping', 'pathname');
+    giscusScript.setAttribute('data-strict', '0');
+    giscusScript.setAttribute('data-reactions-enabled', '1');
+    giscusScript.setAttribute('data-emit-metadata', '0');
+    giscusScript.setAttribute('data-input-position', 'bottom');
+    giscusScript.setAttribute('data-theme', getGiscusTheme());
+    giscusScript.setAttribute('data-lang', 'en');
+    giscusScript.setAttribute('crossorigin', 'anonymous');
+    giscusScript.async = true;
+    document.getElementById('giscus-comments').appendChild(giscusScript);
+
+    // Update giscus theme when PaperMod theme changes
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        // Wait for PaperMod to update body class
+        setTimeout(() => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (iframe) {
+            iframe.contentWindow.postMessage(
+              { giscus: { setConfig: { theme: getGiscusTheme() } } },
+              'https://giscus.app'
+            );
+          }
+        }, 50);
+      });
+    }
   </script>
 </div>
 {{- /* Comments area end */ -}}
