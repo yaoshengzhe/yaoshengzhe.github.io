@@ -3,6 +3,11 @@ date: '2026-01-01T17:20:06-08:00'
 draft: false
 title: 'The RL Book That Finally Made Reinforcement Learning Click'
 tags: ['reinforcement-learning']
+summary: "Most RL intros drown you in notation. EasyRL does the opposite—it builds mental models that survive contact with real training runs. Here's why it finally made reinforcement learning click for me."
+cover:
+  image: rl-loop-agent-environment.png
+  alt: "The RL loop: agent interacts with environment"
+  relative: true
 ---
 
 Reinforcement learning has an uncanny ability to make simple ideas feel complicated.
