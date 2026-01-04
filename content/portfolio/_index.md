@@ -1,6 +1,6 @@
 ---
 title: "Portfolio"
-description: "Open source projects and research reproductions"
+description: "Open source projects and research reproductions in AI/ML and developer tooling"
 ---
 
-A collection of projects I've built and research I've reproduced. Each project represents a deep dive into a technical domain, from AI/ML research to developer tooling.
+I build tools that make engineering more productive and reproduce cutting-edge research to deeply understand the ideas behind the papers. Here you'll find developer tools for AI-assisted workflows and implementations of recent machine learning research.
