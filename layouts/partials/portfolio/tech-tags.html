@@ -1,0 +1,8 @@
+{{- /* Tech stack tags */ -}}
+{{- with .Params.tech }}
+<ul class="portfolio-tech" aria-label="Technologies used">
+  {{- range . }}
+  <li class="tech-tag">{{ . }}</li>
+  {{- end }}
+</ul>
+{{- end }}

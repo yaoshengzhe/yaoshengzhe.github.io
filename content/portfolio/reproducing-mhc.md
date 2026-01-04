@@ -2,7 +2,6 @@
 title: "Reproducing mHC"
 tagline: "Manifold-Constrained Hyper-Connections for Stable Deep Networks"
 weight: 1
-featured: true
 github: "https://github.com/yaoshengzhe/reproducing-mhc"
 blog: "/posts/reproducing-mhc/"
 status: "completed"

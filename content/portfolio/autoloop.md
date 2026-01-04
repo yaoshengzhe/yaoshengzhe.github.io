@@ -10,6 +10,8 @@ tech:
   - Shell
   - Claude Code
   - Git Hooks
+cover:
+  image: "/images/autoloop-cover.svg"
 ---
 
 A plugin for Claude Code that enables AI agents to work autonomously through complex tasks without constant human intervention. Instead of stopping after each step, the agent iterates until the task is genuinely complete.

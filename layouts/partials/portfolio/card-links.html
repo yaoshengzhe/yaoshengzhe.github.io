@@ -1,0 +1,21 @@
+{{- /* Project links: GitHub, Demo/Site, Blog */ -}}
+<nav class="portfolio-links" aria-label="Project links">
+  {{- with .Params.github }}
+  <a href="{{ . }}" class="portfolio-link portfolio-link-github" target="_blank" rel="noopener noreferrer">
+    {{- partial "portfolio/icons/github.html" . }}
+    <span>Source Code</span>
+  </a>
+  {{- end }}
+  {{- with .Params.demo }}
+  <a href="{{ . }}" class="portfolio-link portfolio-link-demo" target="_blank" rel="noopener noreferrer">
+    {{- partial "portfolio/icons/link.html" . }}
+    <span>Site</span>
+  </a>
+  {{- end }}
+  {{- with .Params.blog }}
+  <a href="{{ . }}" class="portfolio-link portfolio-link-blog">
+    {{- partial "portfolio/icons/book.html" . }}
+    <span>Read Article</span>
+  </a>
+  {{- end }}
+</nav>

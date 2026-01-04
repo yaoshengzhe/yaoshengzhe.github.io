@@ -1,0 +1,11 @@
+{{- /* Card meta: status badge and category */ -}}
+<div class="portfolio-card-meta">
+  {{- with .page.Params.status }}
+  {{- $label := index $.statusLabels . | default (. | title) }}
+  <span class="portfolio-status portfolio-status-{{ . }}" role="status">{{ $label }}</span>
+  {{- end }}
+  {{- with .page.Params.category }}
+  {{- $label := index $.categoryLabels . | default (. | title) }}
+  <span class="portfolio-category">{{ $label }}</span>
+  {{- end }}
+</div>
