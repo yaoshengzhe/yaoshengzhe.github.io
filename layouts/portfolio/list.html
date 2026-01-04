@@ -1,0 +1,79 @@
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+
+<div class="portfolio-intro">
+  {{ .Content }}
+</div>
+
+<div class="portfolio-grid">
+  {{- range .Pages }}
+  <article class="portfolio-card">
+    {{- if .Params.cover.image }}
+    <div class="portfolio-card-image">
+      <img src="{{ .Params.cover.image }}" alt="{{ .Title }}" loading="lazy">
+    </div>
+    {{- end }}
+    <div class="portfolio-card-content">
+      <div class="portfolio-card-header">
+        {{- if .Params.icon }}
+        <span class="portfolio-icon">{{ .Params.icon }}</span>
+        {{- end }}
+        <h2>{{ .Title }}</h2>
+      </div>
+      {{- if .Params.tagline }}
+      <p class="portfolio-tagline">{{ .Params.tagline }}</p>
+      {{- end }}
+      <div class="portfolio-card-body">
+        {{ .Summary }}
+      </div>
+      {{- if .Params.tech }}
+      <div class="portfolio-tech">
+        {{- range .Params.tech }}
+        <span class="tech-tag">{{ . }}</span>
+        {{- end }}
+      </div>
+      {{- end }}
+      <div class="portfolio-links">
+        {{- if .Params.github }}
+        <a href="{{ .Params.github }}" class="portfolio-link" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="portfolio-link-icon">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+          View on GitHub
+        </a>
+        {{- end }}
+        {{- if .Params.demo }}
+        <a href="{{ .Params.demo }}" class="portfolio-link portfolio-link-demo" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="portfolio-link-icon">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          Live Demo
+        </a>
+        {{- end }}
+        {{- if .Params.blog }}
+        <a href="{{ .Params.blog }}" class="portfolio-link portfolio-link-blog">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="portfolio-link-icon">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+          Read More
+        </a>
+        {{- end }}
+      </div>
+    </div>
+  </article>
+  {{- end }}
+</div>
+
+{{- end }}

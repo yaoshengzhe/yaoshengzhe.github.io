@@ -1,3 +1,174 @@
+{{- /* Portfolio Styles */ -}}
+<style>
+.portfolio-intro {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--secondary);
+}
+
+.portfolio-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.portfolio-card {
+  background: var(--entry);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.body.dark .portfolio-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.portfolio-card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--code-bg);
+}
+
+.portfolio-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-card-image img {
+  transform: scale(1.05);
+}
+
+.portfolio-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.portfolio-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-icon {
+  font-size: 1.5rem;
+}
+
+.portfolio-card-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.portfolio-tagline {
+  color: var(--secondary);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin: 0 0 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.portfolio-card-body {
+  flex-grow: 1;
+  color: var(--content);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.portfolio-card-body p {
+  margin: 0 0 0.75rem 0;
+}
+
+.portfolio-card-body ul {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.portfolio-card-body li {
+  margin-bottom: 0.25rem;
+}
+
+.portfolio-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.tech-tag {
+  background: var(--code-bg);
+  color: var(--secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.portfolio-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  background: var(--code-bg);
+  color: var(--primary);
+}
+
+.portfolio-link:hover {
+  background: var(--primary);
+  color: var(--theme);
+}
+
+.portfolio-link-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.portfolio-link-demo {
+  background: var(--primary);
+  color: var(--theme);
+}
+
+.portfolio-link-demo:hover {
+  opacity: 0.9;
+}
+</style>
+
 {{- /* KaTeX for math rendering */ -}}
 {{- if or .Params.math .Site.Params.math -}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css" integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi" crossorigin="anonymous">
